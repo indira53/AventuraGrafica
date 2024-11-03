@@ -29,7 +29,6 @@ public class AppleTreeProperties : MonoBehaviour, IPointerClickHandler
 
     public GameObject applesFloor;
 
-    private AudioSource audioSource;
 
     void Start()
     {
@@ -37,10 +36,10 @@ public class AppleTreeProperties : MonoBehaviour, IPointerClickHandler
         dialogueManager = gameManager.GetComponent<DialogueManager>();
         targetPositionY = gameManager.transform.position.y;
         inventory = gameManager.GetComponent<Inventory>();
-        audioSource = GetComponent<AudioSource>();
     }
     public void OnPointerClick(PointerEventData eventData)  //si se ha pulsado el boton usar --> activar dialogo
     {
+
         if (buttonsBehaviour.GetLookButton())
         {
             dialogueManager.Dialogue(DialogueAppleLook);
@@ -60,7 +59,6 @@ public class AppleTreeProperties : MonoBehaviour, IPointerClickHandler
 
             if (inventory.getSelectedItem() == Inventory.Items.Branch)
             {
-                audioSource.Play();
                 dialogueManager.Dialogue(DialogueAppleUseWithBranch);
                 this.gameObject.SetActive(false);
                 applesFloor.SetActive(true);

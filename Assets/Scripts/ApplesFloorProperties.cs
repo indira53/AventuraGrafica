@@ -11,6 +11,7 @@ public class ApplesFloorProperties : MonoBehaviour, IPointerClickHandler
     public GameObject gameManager;
     public GameObject Apple;
     public GameObject player;
+    public AudioSource audioSource;
 
     public bool meComiUnaManzana;
 
@@ -27,7 +28,7 @@ public class ApplesFloorProperties : MonoBehaviour, IPointerClickHandler
     public string[] DialogueApplesFloorUseWithBranch = { "La rama no me sirve para guardar las manzanas." };
     public string[] DialogueApplesFloorMeComiUnaManzana = { "No, ya me he comido una manzana, tengo que llevar las otras a casa." };
     public void OnPointerClick(PointerEventData eventData)
-    {
+    {  
         if (buttonsBehaviour.GetLookButton())
         {
             dialogueManager.Dialogue(DialogueApplesFloorLook);
@@ -88,6 +89,7 @@ public class ApplesFloorProperties : MonoBehaviour, IPointerClickHandler
 
 
 
+
     // Start is called before the first frame update
     void Start()
     {
@@ -95,6 +97,7 @@ public class ApplesFloorProperties : MonoBehaviour, IPointerClickHandler
         dialogueManager = gameManager.GetComponent<DialogueManager>();
         targetPositionY = gameManager.transform.position.y;
         inventory = gameManager.GetComponent<Inventory>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
