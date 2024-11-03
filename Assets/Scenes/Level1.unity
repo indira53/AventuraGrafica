@@ -906,9 +906,9 @@ MonoBehaviour:
   gameManager: {fileID: 1950161947}
   player: {fileID: 147272088}
   DialogueBranchLook:
-  - Una rama.
+  - Una rama, igual la puedo usar para algo.
   DialogueBranchTake:
-  - Ahora tienes una rama.
+  - Ahora tengo una rama.
   DialogueBranchUse:
   - No puedo usar algo que no tengo.
 --- !u!222 &196465434
@@ -2149,6 +2149,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameManager: {fileID: 1950161947}
   Apple: {fileID: 639973019}
+  meComiUnaManzana: 0
   DialogueApplesFloorLook:
   - Hay manzanas en el suelo.
   DialogueApplesFloorTake:
@@ -2161,6 +2162,8 @@ MonoBehaviour:
   - No puedo usar una manzana con las manzanas.
   DialogueApplesFloorUseWithBranch:
   - La rama no me sirve para coger las manzanas.
+  DialogueApplesFloorMeComiUnaManzana:
+  - No, ya he cogido una manzana, tengo que llevar las otras a casa.
 --- !u!61 &570738414
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2675,7 +2678,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameManager: {fileID: 1950161947}
   DialogueApple:
-  - Hay manzanas en el suelo.
+  - Mmm, que rica.
   slot: 2
 --- !u!1 &705176601
 GameObject:
@@ -3886,11 +3889,13 @@ MonoBehaviour:
   - "\xA1No puedo coger un arbusto entero!"
   DialogueArbustoUse:
   - No puedo usar un arbusto.
+  DialogueArbustoSearch:
+  - "\xA1He encontrado una rama!"
   branch: {fileID: 196465430}
   gameManager: {fileID: 1950161947}
   player: {fileID: 147272088}
   targetPositionY: 0
-  targetPositionX: 0
+  targetPositionX: 700
 --- !u!1 &1395995908
 GameObject:
   m_ObjectHideFlags: 0
@@ -4349,7 +4354,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameManager: {fileID: 1950161947}
   DialogueApple:
-  - Hay manzanas en el suelo.
+  - Mmm, que rica.
   slot: 1
 --- !u!1 &1781013285
 GameObject:
@@ -4683,11 +4688,11 @@ MonoBehaviour:
   gameManager: {fileID: 1950161947}
   player: {fileID: 147272088}
   DialogueCestaLook:
-  - Una cesta.
+  - Es na cesta.
   DialogueCestaTake:
   - He cogido una cesta.
   DialogueCestaUse:
-  - No puedo usarla si no la tengo.
+  - No puedo usar la cesta si no la tengo.
   targetPositionX: 1330
 --- !u!61 &1841200181
 BoxCollider2D:
@@ -5125,7 +5130,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameManager: {fileID: 1950161947}
   DialogueApple:
-  - Hay manzanas en el suelo.
+  - Mmm, que rica.
   slot: 3
 --- !u!1 &1997856362
 GameObject:
