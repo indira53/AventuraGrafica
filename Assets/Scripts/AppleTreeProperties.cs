@@ -9,6 +9,7 @@ public class AppleTreeProperties : MonoBehaviour, IPointerClickHandler
     public string[] DialogueAppleLook = { "Mmm, me apetece una manzana." };
     public string[] DialogueAppleTake = { "Están demasiado altas para cogerlas." };
     public string[] DialogueAppleUse = { "No llego a las manzanas." };
+    public string[] DialogueAppleSearch = { "Es un manzano." };
     public string[] DialogueAppleUseWithBranch = { "¡He hecho que caigan las manzanas al varear el arbol!" };
 
     public GameObject gameManager;
@@ -28,12 +29,15 @@ public class AppleTreeProperties : MonoBehaviour, IPointerClickHandler
 
     public GameObject applesFloor;
 
+    private AudioSource audioSource;
+
     void Start()
     {
         buttonsBehaviour = gameManager.GetComponent<ButtonsBehaviour>();
         dialogueManager = gameManager.GetComponent<DialogueManager>();
         targetPositionY = gameManager.transform.position.y;
         inventory = gameManager.GetComponent<Inventory>();
+        audioSource = GetComponent<AudioSource>();
     }
     public void OnPointerClick(PointerEventData eventData)  //si se ha pulsado el boton usar --> activar dialogo
     {
@@ -56,14 +60,22 @@ public class AppleTreeProperties : MonoBehaviour, IPointerClickHandler
 
             if (inventory.getSelectedItem() == Inventory.Items.Branch)
             {
+                audioSource.Play();
                 dialogueManager.Dialogue(DialogueAppleUseWithBranch);
                 this.gameObject.SetActive(false);
                 applesFloor.SetActive(true);
+                
             }
             else
             {
                 dialogueManager.Dialogue(DialogueAppleUse);
             }
+        }
+
+        if (buttonsBehaviour.GetSearchButton())
+        {
+            dialogueManager.Dialogue(DialogueAppleSearch);
+
         }
     }
 

@@ -65,25 +65,18 @@ public class ApplesFloorProperties : MonoBehaviour, IPointerClickHandler
             if (inventory.getSelectedItem() == Inventory.Items.Apple)
             {
                 dialogueManager.Dialogue(DialogueApplesFloorUseWithApple);
-                inventory.selectedItem = 0;
             }
 
             if (inventory.getSelectedItem() == Inventory.Items.Branch)
             {
                 dialogueManager.Dialogue(DialogueApplesFloorUseWithBranch);
-                inventory.selectedItem = 0;
             }
 
             if (inventory.getSelectedItem() == Inventory.Items.None)
             {
                 dialogueManager.Dialogue(DialogueApplesFloorUse);
-                inventory.selectedItem = 0;
             }
 
-            else
-            {
-                dialogueManager.Dialogue(DialogueApplesFloorUse);
-            }
         }
 
         if (buttonsBehaviour.GetSearchButton())

@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
@@ -20,6 +21,8 @@ public class ArbustoProperties : MonoBehaviour, IPointerClickHandler
 
     public float targetPositionY;
     public float targetPositionX;
+
+    private AudioSource audioSource;
 
     public void OnPointerClick(PointerEventData eventData)
     {
@@ -51,6 +54,7 @@ public class ArbustoProperties : MonoBehaviour, IPointerClickHandler
             {
                 branch.SetActive(true);
                 dialogueManager.Dialogue(DialogueArbustoSearch);
+                audioSource.Play();
             }
 
         }
@@ -63,6 +67,7 @@ public class ArbustoProperties : MonoBehaviour, IPointerClickHandler
         dialogueManager = gameManager.GetComponent<DialogueManager>();
         inventory = gameManager.GetComponent<Inventory>();
         targetPositionY = gameManager.transform.position.y;
+        audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
