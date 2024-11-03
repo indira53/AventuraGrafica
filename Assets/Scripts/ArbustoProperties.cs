@@ -8,6 +8,7 @@ public class ArbustoProperties : MonoBehaviour, IPointerClickHandler
     public string[] DialogueArbustoLook = { "Un arbusto normal y corriente." };
     public string[] DialogueArbustoTake = { "No puedo coger un arbusto entero!" };
     public string[] DialogueArbustoUse = { "No puedo usar un arbusto." };
+    public string[] DialogueArbustoSearch = { "¡He encontrado una rama!" };
 
     public GameObject branch;
     public GameObject gameManager;
@@ -38,11 +39,18 @@ public class ArbustoProperties : MonoBehaviour, IPointerClickHandler
         }
 
         if (buttonsBehaviour.GetUseButton())
+        {
+            dialogueManager.Dialogue(DialogueArbustoUse);
+
+
+        }
+
+        if (buttonsBehaviour.GetSearchButton())
         {     
             if (!inventory.inventory.Contains(Inventory.Items.Branch))
             {
                 branch.SetActive(true);
-                dialogueManager.Dialogue(DialogueArbustoUse);
+                dialogueManager.Dialogue(DialogueArbustoSearch);
             }
 
         }
