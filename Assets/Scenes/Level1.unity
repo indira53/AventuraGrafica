@@ -2160,7 +2160,8 @@ MonoBehaviour:
   DialogueApplesFloorLook:
   - Hay manzanas en el suelo.
   DialogueApplesFloorTake:
-  - "Tengo una manzana, pero necesito algo donde guardar las dem\xE1s."
+  - Que buena pinta tiene.
+  - "Necesito algo donde guardar las dem\xE1s."
   DialogueApplesFloorUse:
   - Sigo necesitando algo donde guardarlas.
   DialogueApplesFloorSearch:
