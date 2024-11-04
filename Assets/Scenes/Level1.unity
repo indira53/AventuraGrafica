@@ -2172,7 +2172,8 @@ MonoBehaviour:
   DialogueApplesFloorUseWithBranch:
   - La rama no me sirve para coger las manzanas.
   DialogueApplesFloorMeComiUnaManzana:
-  - No, ya he cogido una manzana, tengo que llevar las otras a casa.
+  - 'No, ya he cogido una manzana.                  '
+  - Tengo que llevar las otras a casa.
 --- !u!61 &570738414
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3316,10 +3317,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1244759061}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.59323853, y: 0.056}
+  m_AnchorMin: {x: 0.5868938, y: 0.064}
   m_AnchorMax: {x: 0.92663026, y: 0.16240743}
-  m_AnchoredPosition: {x: -3.2144775, y: -0.15783691}
-  m_SizeDelta: {x: 5.5103455, y: 0.31799078}
+  m_AnchoredPosition: {x: 1.1362305, y: 0.68170166}
+  m_SizeDelta: {x: -3.1910925, y: -1.3610001}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1091403265
 MonoBehaviour:
@@ -3405,7 +3406,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -2.8240967, y: -3.9455566, z: -1.7486572, w: -6.190338}
+  m_margin: {x: -2.8240967, y: -3.9455566, z: -1.7486572, w: 4.251236}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -5090,6 +5091,8 @@ MonoBehaviour:
   - He cogido una cesta.
   DialogueCestaUse:
   - No puedo usar la cesta si no la tengo.
+  DialogueCestaSearch:
+  - Solo es una cesta.
   targetPositionX: 1330
 --- !u!61 &1841200181
 BoxCollider2D:

@@ -17,6 +17,7 @@ public class CestaProperties : MonoBehaviour, IPointerClickHandler
     public string[] DialogueCestaLook = { "Una cesta." };
     public string[] DialogueCestaTake = { "He cogido una cesta." };
     public string[] DialogueCestaUse = { "No puedo usar la cesta si no la tengo." };
+    public string[] DialogueCestaSearch = { "Solo es una cesta." };
 
     public float targetPositionX;
 
@@ -55,6 +56,11 @@ public class CestaProperties : MonoBehaviour, IPointerClickHandler
         if (buttonsBehaviour.GetUseButton())
         {
             dialogueManager.Dialogue(DialogueCestaUse);
+        }
+
+        if (buttonsBehaviour.GetSearchButton())
+        {
+            dialogueManager.Dialogue(DialogueCestaSearch);
 
         }
 
